@@ -1,9 +1,9 @@
 [
   {
-    host = "eden-inspiron";
+    host = "nixos";
     user = "zhaozhan";
-    extraOSModules = [ ./inspiron/os.nix ];
-    extraHomeModules = [ ./inspiron/home.nix ];
+    extraOSModules = [ ./nixos/os.nix ];
+    extraHomeModules = [ ./nixos/home.nix ];
     extraHomeArgs = {
       nixosVersion = "unstable";
       homeManagerVersion = "master";
