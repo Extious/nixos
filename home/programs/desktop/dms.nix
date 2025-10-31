@@ -74,7 +74,7 @@ in
     ''
       {
         "currentThemeName": "custom",
-        "customThemeFile": "/home/eden/.config/DankMaterialShell/stylix-colors.json",
+        "customThemeFile": "/home/zhaozhan/.config/DankMaterialShell/stylix-colors.json",
         "matugenScheme": "scheme-tonal-spot",
         "dankBarTransparency": 0.5,
         "dankBarWidgetTransparency": 0.56,
