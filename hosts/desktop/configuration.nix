@@ -97,7 +97,7 @@
   virtualisation.libvirtd.qemu = {
     swtpm.enable = true;
   };
-  users.groups.libvirtd.members = ["alice"];
+  users.groups.libvirtd.members = ["zhaozhan"];
 
   # Enable USB redirection (optional)
   virtualisation.spiceUSBRedirection.enable = true;

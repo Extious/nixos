@@ -52,9 +52,9 @@
       ];
 
       # --- 2. 定义桌面专有模块 (DESKTOP MODULES) ---
-      # 包含用户 'tux' 的定义、Home Manager 核心和配置。
+      # 包含用户 'zhaozhan' 的定义、Home Manager 核心和配置。
       desktopModules = [
-        ./Modules/user/tux.nix # 定义用户 'tux'
+        ./Modules/user/tux.nix # 定义用户 'zhaozhan'
 
         # Home Manager 核心设置
         home-manager.nixosModules.home-manager
@@ -62,8 +62,8 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            # 仅在桌面主机上配置 'tux' 用户的 home
-            users.tux = {
+            # 仅在桌面主机上配置 'zhaozhan' 用户的 home
+            users.zhaozhan = {
               imports = [
                 ./home.nix
                 inputs.dankMaterialShell.homeModules.dankMaterialShell.default

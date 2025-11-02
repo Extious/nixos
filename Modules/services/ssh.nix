@@ -8,7 +8,7 @@
       AllowUsers = [
         "Zerokaze"
         "root"
-        "tux"
+        "zhaozhan"
       ];
       UseDns = true;
       X11Forwarding = false;

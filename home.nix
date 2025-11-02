@@ -1,8 +1,8 @@
 { inputs, pkgs, ... }:
 
 {
-  home.username = "tux";
-  home.homeDirectory = "/home/tux";
+  home.username = "zhaozhan";
+  home.homeDirectory = "/home/zhaozhan";
 
   imports = [
     ./homeModules/git.nix

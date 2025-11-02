@@ -1,13 +1,13 @@
 { config, pkgs, ... }:
 {
-  users.users.tux = {
+  users.users.zhaozhan = {
     isNormalUser = true;
-    description = "tux";
+    description = "zhaozhan";
     extraGroups = [
       "wheel"
       "libvirtd"
     ]; # Sudo access
     shell = pkgs.fish;
-    home = "/home/tux";
+    home = "/home/zhaozhan";
   };
 }

@@ -48,7 +48,7 @@
 
   systemd.tmpfiles.rules = [
     # Type Path        Mode UID    GID      Age Argument
-    "d    /data       0755 tux  users    -   -"
+    "d    /data       0755 zhaozhan  users    -   -"
   ];
 
   swapDevices = [ ];
