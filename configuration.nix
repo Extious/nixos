@@ -47,10 +47,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
- # services.xserver.displayManager.gdm.enable = true;
- # services.xserver.desktopManager.gnome.enable = true;
-  services.desktopManager.gnome.enable = true;
-  services.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -60,9 +58,9 @@
 
 
   # 为gnome视频软件使用openGl
-    environment.sessionVariables = {
+  environment.sessionVariables = {
     GDK_GL = "gles";
-    };
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

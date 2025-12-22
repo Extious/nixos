@@ -14,7 +14,6 @@
       onShutdown = "shutdown";
       qemu = {
         runAsRoot = false;
-        # ovmf submodule REMOVED: All OVMF images are now available by default in nixpkgs-unstable
         swtpm.enable = true; # TPM emulation
         verbatimConfig = ''
           user = "qemu-libvirtd"
@@ -55,7 +54,7 @@
   ];
 
   # Enable necessary kernel modules for VM performance
-  boot.kernelModules = ["kvm-amd" "kvm-intel" "vfio-pci"];
+  boot.kernelModules = ["kvm-intel" "vfio-pci"];
 
   # Add boot kernel parameters for better graphics support
   boot.kernelParams = [
