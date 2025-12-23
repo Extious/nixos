@@ -25,6 +25,7 @@
     vscode
     v2raya
     qq
+    gemini-cli
  ];
 
   # 修复 Electron/Chromium 应用在 Wayland 下的问题

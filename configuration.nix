@@ -26,6 +26,11 @@
   # 启用网络管理
   networking.networkmanager.enable = true;
 
+  # 启用蓝牙
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
   # 开启flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
