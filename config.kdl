@@ -59,6 +59,7 @@ spawn-at-startup  "noctalia-shell"
 environment {
     // Wayland相关环境变量
     MOZ_ENABLE_WAYLAND "1"   // Firefox使用Wayland
+    NIXOS_OZONE_WL "1"       // Electron应用使用Wayland (修复VS Code)
     XDG_SESSION_TYPE "wayland"
     GDK_BACKEND "wayland"    // GTK应用使用Wayland
     
