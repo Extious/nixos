@@ -54,6 +54,7 @@ overview {
 
 // ================ Programs to Spawn at Startup ================
 spawn-at-startup  "noctalia-shell"
+spawn-at-startup "niri" "msg" "action" "focus-workspace" "1"
 
 // ================ Environment Variables ================
 environment {
