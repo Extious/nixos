@@ -6,6 +6,9 @@
 
   # 安装 Flatpak
   services.flatpak.enable = true;
+
+  # 启用 v2raya 服务
+  services.v2raya.enable = true;
   
   environment.systemPackages = with pkgs; [
     vim
