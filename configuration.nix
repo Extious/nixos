@@ -2,7 +2,7 @@
 # 可以在 configuration.nix(5) 手册页和 NixOS 手册中找到帮助
 # （通过运行 ‘nixos-help’ 访问）。
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
