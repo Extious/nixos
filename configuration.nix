@@ -8,7 +8,6 @@
   imports =
     [ # 包含硬件扫描结果
       ./hardware-configuration.nix
-      ./modules/sddm.nix
     ];
 
   # 引导加载程序
