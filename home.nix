@@ -19,6 +19,8 @@
     # GUI Apps
     firefox
     vscode
+    code-cursor
+    zed
     qq
     
     # CLI Tools
