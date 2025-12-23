@@ -20,7 +20,7 @@
     cmatrix
     yazi
     vscode
-    clash-rs
+    clash-meta
     qq
  ];
 
