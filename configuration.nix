@@ -29,9 +29,11 @@
   # 开启flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # 镜像源配置
   nix.settings = {
-    # 使用官方镜像源
     substituters = [
+      "https://mirrors.ustc.edu.cn/nix-channels/store?priority=10"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=5"
       "https://cache.nixos.org/"
     ];
     # 增加下载缓冲区大小
