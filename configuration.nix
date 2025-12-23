@@ -47,8 +47,16 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.enable = false;
   services.desktopManager.gnome.enable = true;
+
+  # Enable SDDM with Catppuccin theme
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    theme = "catppuccin-mocha";
+    package = pkgs.kdePackages.sddm;
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -94,6 +102,15 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+    (catppuccin-sddm.override {
+      flavor = "mocha";
+      font  = "Noto Sans";
+      fontSize = "9";
+      loginBackground = true;
+    })
+  ];
 
   # enable Hyprland
   programs.hyprland.enable = true; 
