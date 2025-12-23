@@ -71,6 +71,9 @@
   # 启用 CUPS 打印服务
   services.printing.enable = true;
 
+  # 启用 Upower 电源管理服务
+  services.upower.enable = true;
+
   # 启用 PipeWire 音频支持
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
