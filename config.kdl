@@ -271,6 +271,12 @@ binds {
     Mod+BracketLeft hotkey-overlay-title="Window Left" repeat=false { consume-or-expel-window-left; }
     Mod+BracketRight hotkey-overlay-title="Window Right" repeat=false { consume-or-expel-window-right; }  
 
+    // -------- Screenshots --------
+    Print { spawn-sh "grim - | wl-copy"; }
+    Ctrl+Print { spawn-sh "mkdir -p ~/Pictures/Screenshots && grim ~/Pictures/Screenshots/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"; }
+    Alt+Print { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
+    Ctrl+Alt+Print { spawn-sh "mkdir -p ~/Pictures/Screenshots && grim -g \"$(slurp)\" ~/Pictures/Screenshots/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"; }
+
     // -------- System --------
     Mod+Shift+E hotkey-overlay-title="Quit Niri" { quit skip-confirmation=true; }  // Quit Niri (Skip Confirmation)
 

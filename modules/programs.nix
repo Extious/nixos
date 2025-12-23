@@ -26,6 +26,11 @@
     v2raya
     qq
     gemini-cli
+    
+    # Screenshot tools
+    grim
+    slurp
+    wl-clipboard
  ];
 
   # 修复 Electron/Chromium 应用在 Wayland 下的问题
