@@ -103,15 +103,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs; [
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      font  = "Noto Sans";
-      fontSize = "9";
-      loginBackground = true;
-    })
-  ];
-
   # enable Hyprland
   programs.hyprland.enable = true; 
 
@@ -121,6 +112,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    (catppuccin-sddm.override {
+      flavor = "mocha";
+      font  = "Noto Sans";
+      fontSize = "9";
+      loginBackground = true;
+    })
    gnome-extension-manager
     gst_all_1.gst-plugins-base
     gst_all_1.gst-plugins-good
