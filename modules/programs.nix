@@ -20,7 +20,7 @@
     cmatrix
     yazi
     vscode
-    clash-verge-rev
+    clash-rs
     qq
  ];
 
