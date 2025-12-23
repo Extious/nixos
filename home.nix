@@ -20,7 +20,7 @@
     firefox
     vscode
     code-cursor
-    zed
+    zed-editor
     qq
     
     # CLI Tools
