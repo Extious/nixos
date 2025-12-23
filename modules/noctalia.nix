@@ -4,7 +4,7 @@
     # ... 可能还有其他软件包
   ];
   systemd.user.services.notalia-shell = {
-    description = "Noctalia Shell for Niri";
+    description = "Niri 的 Noctalia Shell";
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
     serviceConfig = {

@@ -1,5 +1,5 @@
 { config, pkgs, lib, ... }: {
-# 设置系统的中文环境
+  # 设置系统的中文环境
   i18n = {
     defaultLocale = "zh_CN.UTF-8";
     extraLocaleSettings = {

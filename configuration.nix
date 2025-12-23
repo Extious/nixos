@@ -1,64 +1,55 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# 编辑此配置文件以定义系统上应安装的内容。
+# 可以在 configuration.nix(5) 手册页和 NixOS 手册中找到帮助
+# （通过运行 ‘nixos-help’ 访问）。
 
 { config, pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ # 包含硬件扫描结果
       ./hardware-configuration.nix
     ];
 
-  # Bootloader.
+  # 引导加载程序
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.supportedFilesystems = [ "ntfs" ];
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "nixos"; # 定义主机名
+  # networking.wireless.enable = true;  # 通过 wpa_supplicant 启用无线支持
 
-  # Configure network proxy if necessary
+  # 配置网络代理（如果需要）
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
+  # 启用网络管理
   networking.networkmanager.enable = true;
 
   # 开启flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # 镜像源配置
   nix.settings = {
+    # 使用官方镜像源
     substituters = [
-      "https://mirrors.ustc.edu.cn/nix-channels/store?priority=10"
-      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store?priority=5"
       "https://cache.nixos.org/"
     ];
     # 增加下载缓冲区大小
     download-buffer-size = 524288000;
   };
 
-  # Set your time zone.
+  # 设置时区
   time.timeZone = "Asia/Shanghai";
 
-  # Enable the X11 windowing system.
+  # 启用 X11 窗口系统
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = false;
-  services.desktopManager.gnome.enable = true;
+  # 启用 GDM 显示管理器
+  services.displayManager.gdm.enable = true;
+  # 禁用 GNOME 桌面环境
+  services.desktopManager.gnome.enable = false;
 
-  # Enable SDDM with Catppuccin theme
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    theme = "catppuccin-mocha";
-    package = pkgs.kdePackages.sddm;
-  };
-
-  # Configure keymap in X11
+  # 配置 X11 键盘映射
   services.xserver.xkb = {
     layout = "us";
     variant = "";
@@ -70,10 +61,10 @@
     GDK_GL = "gles";
   };
 
-  # Enable CUPS to print documents.
+  # 启用 CUPS 打印服务
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  # 启用 PipeWire 音频支持
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -82,14 +73,14 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true; 
-    # If you want to use JACK applications, uncomment this
+    # 如果你想使用 JACK 应用程序，请取消注释
     #jack.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
+  # 启用触摸板支持（大多数桌面管理器默认启用）
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # 定义用户账户。别忘了用 ‘passwd’ 设置密码。
   users.users.zhaozhan = {
     isNormalUser = true;
     description = "zhaozhan";
@@ -100,11 +91,11 @@
     ];
   };
 
-  # Allow unfree packages
+  # 允许安装非自由软件
   nixpkgs.config.allowUnfree = true;
 
-  # enable Hyprland
-  programs.hyprland.enable = true; 
+  # 禁用 Hyprland
+  programs.hyprland.enable = false; 
 
   # Enable nix-ld for running unpatched dynamic binaries
   programs.nix-ld.enable = true;
@@ -112,12 +103,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    (catppuccin-sddm.override {
-      flavor = "mocha";
-      font  = "Noto Sans";
-      fontSize = "9";
-      loginBackground = true;
-    })
    gnome-extension-manager
     gst_all_1.gst-plugins-base
     gst_all_1.gst-plugins-good

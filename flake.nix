@@ -1,5 +1,5 @@
 {
-  description = "NixOS configuration with Noctalia";
+  description = "带有 Noctalia 的 NixOS 配置";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     quickshell = {

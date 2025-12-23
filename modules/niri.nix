@@ -2,8 +2,8 @@
 
 {
 
-# niri设置
-programs.niri.enable = true;
+  # 启用 Niri
+  programs.niri.enable = true;
 
   environment.systemPackages = with pkgs; [
     fuzzel

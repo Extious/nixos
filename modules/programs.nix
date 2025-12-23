@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 {
-# Install firefox.
+  # 安装 Firefox
   programs.firefox.enable = true;
 
-# 安装  flatpak
+  # 安装 Flatpak
   services.flatpak.enable = true;
   
   environment.systemPackages = with pkgs; [
