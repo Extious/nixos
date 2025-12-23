@@ -272,6 +272,7 @@ binds {
     Mod+BracketRight hotkey-overlay-title="Window Right" repeat=false { consume-or-expel-window-right; }  
 
     // -------- Screenshots --------
+    Mod+Ctrl+A hotkey-overlay-title="Area Screenshot" { spawn-sh "mkdir -p ~/Pictures/Screenshots && grim -g \"$(slurp)\" ~/Pictures/Screenshots/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"; }
     Print { spawn-sh "grim - | wl-copy"; }
     Ctrl+Print { spawn-sh "mkdir -p ~/Pictures/Screenshots && grim ~/Pictures/Screenshots/Screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"; }
     Alt+Print { spawn-sh "grim -g \"$(slurp)\" - | wl-copy"; }
