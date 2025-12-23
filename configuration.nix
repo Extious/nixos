@@ -8,6 +8,7 @@
   imports =
     [ # 包含硬件扫描结果
       ./hardware-configuration.nix
+      ./modules/sddm.nix
     ];
 
   # 引导加载程序
@@ -53,9 +54,7 @@
 
   # 启用 SDDM 显示管理器 (替代 GDM 以进行美化)
   services.displayManager.gdm.enable = false;
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.sddm.theme = "catppuccin-mocha";
+  # SDDM configuration moved to ./modules/sddm.nix
 
   # 禁用 GNOME 桌面环境
   services.desktopManager.gnome.enable = false;
@@ -117,9 +116,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    sddm-sugar-dark
-    catppuccin-sddm
-    libsForQt5.qt5.qtgraphicaleffects
    gnome-extension-manager
     gst_all_1.gst-plugins-base
     gst_all_1.gst-plugins-good
