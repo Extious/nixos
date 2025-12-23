@@ -5,7 +5,7 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true; # 保持 Wayland 模式
-    theme = "catppuccin-mocha";
+    theme = "catppuccin-mocha-mauve";
     package = pkgs.kdePackages.sddm; # 使用 Qt6 版本的 SDDM 以获得更好的主题支持
   };
 
