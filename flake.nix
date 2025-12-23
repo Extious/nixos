@@ -11,6 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
      # inputs.quickshell.follows = "quickshell";
     };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, ... }: 
@@ -28,6 +32,7 @@
       
       modules = [
         ./configuration.nix
+        inputs.home-manager.nixosModules.home-manager
       ] ++ generatedModules; 
     };
   };

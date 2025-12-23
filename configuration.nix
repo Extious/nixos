@@ -121,6 +121,13 @@
   # Enable the OpenSSH daemon.
    services.openssh.enable = true;
 
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.zhaozhan = import ./home.nix;
+  };
+
   # This value determines the NixOS release from which the default
   system.stateVersion = "25.05"; # Did you read the comment?
 
