@@ -22,7 +22,6 @@
     vscode
     clash-verge-rev
     qq
-    wechat
  ];
 
   # 修复 Electron/Chromium 应用在 Wayland 下的问题
