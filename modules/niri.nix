@@ -15,4 +15,7 @@ programs.niri.enable = true;
     XCURSOR_THEME = "Bibata-Modern-Ice";
     XCURSOR_SIZE = "24";  
   };
+
+  # 将配置文件链接到 /etc/xdg/niri/config.kdl，使 Niri 能读取到它
+  environment.etc."xdg/niri/config.kdl".source = ../config.kdl;
 }

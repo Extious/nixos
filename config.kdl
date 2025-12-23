@@ -127,22 +127,28 @@ window-rule {
     open-maximized true
 }
 
-/*
-// ================ 显示输出配置 (当前禁用) ================
-output "DP-3" {
-    mode "3840x2160@240"  // 4K 240Hz显示器
-    scale 2               // 200%缩放
-    transform "normal"    // 无旋转
-    variable-refresh-rate on-demand=true  // 启用可变刷新率
-    position x=0 y=0      // 主显示器位置
+// ================ 显示输出配置 ================
+
+// 1. 笔记本内置屏幕 (eDP-1)
+output "eDP-1" {
+    scale 1.0
+    position x=0 y=0
 }
 
-output "DP-2" {
-    mode "2560x1440@240"  // 2K 240Hz显示器
-    scale 1               // 100%缩放
-    position x=1920 y=0   // 位于主显示器右侧
+// 2. 4K 外接屏幕 (HDMI-A-1)
+output "HDMI-A-1" {
+    // 4K 推荐缩放：1.5 (显示内容更多，类似2K屏) 或 2.0 (字体更大，类似1080p屏)
+    scale 1.5
+    // 位置设置在笔记本屏幕右侧 (1920是笔记本宽)
+    position x=1920 y=0
+    mode "3840x2160@60"
 }
-*/
+
+// 备用配置：如果是 HDMI 接口，可以取消注释并修改
+// output "HDMI-A-1" {
+//     scale 2.0
+//     position x=1920 y=0
+// }
 
 // ================ 快捷键绑定 ================
 binds {
