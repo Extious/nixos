@@ -18,8 +18,10 @@
     helix
     btop
     cmatrix
-    obsidian
     yazi
     vscode
+    clash-verge-rev
+    qq
+    wechat
  ];
 }
