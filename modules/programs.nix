@@ -22,6 +22,14 @@
     vscode
     clash-verge-rev
     qq
-    wechat
+    (pkgs.callPackage "${pkgs.path}/pkgs/by-name/we/wechat/linux.nix" {
+      pname = "wechat";
+      version = "4.1.0.13";
+      src = pkgs.fetchurl {
+        url = "https://dldir1v6.qq.com/weixin/Universal/Linux/WeChatLinux_x86_64.AppImage";
+        hash = "sha256-d/zdb69gmIcgAFCbWLKGfmD8ZFfuDlYdOy7vUJ7SiXc=";
+      };
+      meta = pkgs.wechat.meta;
+    })
  ];
 }
