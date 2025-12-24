@@ -5,6 +5,16 @@
   # 启用 Niri
   programs.niri.enable = true;
 
+  # 配置 XDG Portal 以支持屏幕共享和链接打开等功能
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+    config.common.default = "*";
+  };
+
   environment.systemPackages = with pkgs; [
     fuzzel
     alacritty

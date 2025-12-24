@@ -10,6 +10,7 @@
     git
     v2raya
     xdg-user-dirs
+    xdg-utils
  ];
 
   # 修复 Electron/Chromium 应用在 Wayland 下的问题
